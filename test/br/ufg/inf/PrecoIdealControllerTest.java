@@ -20,5 +20,20 @@ public class PrecoIdealControllerTest {
         double expResult = 1.6;
         assertEquals(expResult, result, 0.1);
     }
-    
+
+    /**
+     * Cálculo de variação de preço
+     * Caso de exemplo: calças jeans
+     * 
+     * http://pt.wikihow.com/Calcular-a-Varia%C3%A7%C3%A3o-Percentual
+     */
+    @Test
+    public void testCalculaVariacaoPreco() {
+        double pa = 50;
+        double pf = 30;
+
+        double result = PrecoIdealController.calculaVariacaoPreco(pa, pf);
+        double expResult = -40;
+        assertEquals(expResult, result, 0.1);
+    }
 }
