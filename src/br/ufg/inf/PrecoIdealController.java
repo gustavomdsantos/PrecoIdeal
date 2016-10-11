@@ -16,6 +16,6 @@ public class PrecoIdealController {
     public static double calculaElasticidade(double pa, double pf, double qa, double qf) {
 
         double elasticidade = (((qa-qf)/qf)/(pa-pf)/pf);
-        return elasticidade*(-100);
+        return Math.abs(elasticidade*100);
     }
 }
