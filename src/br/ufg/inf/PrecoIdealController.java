@@ -9,7 +9,7 @@ public class PrecoIdealController {
      * @param pa Preço anterior (preço praticado) (Pa)
      * @param pf Preço final (preço proposto) (Pf)
      * @param qa Quantidade atual (normalmente vende....) (Qa)
-     * @param qf Quantidade proposta (Qp)
+     * @param qf Quantidade proposta / ideal / efetiva / final (Qp)
      * 
      * @return o épsilon da elasticidade.
      */
