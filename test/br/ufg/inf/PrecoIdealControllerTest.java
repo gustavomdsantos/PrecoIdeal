@@ -38,7 +38,7 @@ public class PrecoIdealControllerTest {
     }
 
     @Test
-    public void testCalculaQtdeIdealMensal() {
+    public void testCalculaQtdeIdealCinema() {
         double pa = 8;
         double pf = 10;
         double qa = 4;
@@ -48,5 +48,31 @@ public class PrecoIdealControllerTest {
         
         double result = PrecoIdealController.calculaQtdeIdealMensal(elasticidade, pa , pf, qa);
         assertEquals(qf, result, 0.1);
+    }
+    
+    @Test
+    public void testCalculaQtdeIdealFixoP50() {
+        double pa = 4;
+        double pf = 8;
+        double qa = 4;
+        
+        double elasticidade = -1;
+        
+        double result = PrecoIdealController.calculaQtdeIdealMensal(elasticidade, pa , pf, qa);
+        System.out.println("P50: " + result);
+        //assertEquals(qf, result, 0.1);
+    }
+    
+    @Test
+    public void testCalculaQtdeIdealFixoM50() {
+        double pa = 4;
+        double pf = 8;
+        double qa = 4;
+        
+        double elasticidade = -0.5;
+        
+        double result = PrecoIdealController.calculaQtdeIdealMensal(elasticidade, pa , pf, qa);
+        System.out.println("M50: " + result);
+        //assertEquals(qf, result, 0.1);
     }
 }

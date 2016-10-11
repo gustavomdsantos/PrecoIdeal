@@ -15,8 +15,8 @@ public class PrecoIdealController {
      */
     public static double calculaElasticidade(double pa, double pf, double qa, double qf) {
 
-        double vp = ((pa-pf)/pf);
-        double vq = ((qa-qf)/qf);
+        double vp = ((pf-pa)/pa);
+        double vq = ((qf-qa)/qa);
         
         double elasticidade = vq/vp;
         return elasticidade;
@@ -34,7 +34,7 @@ public class PrecoIdealController {
      */
     public static double calculaQtdeIdealMensal(double elasticidade, double pa, double pf, double qa){
 
-        double vp = ((pa-pf)/pf);           
+        double vp = ((pf-pa)/pa);           
         double qf = qa/(elasticidade*vp + 1);
         
         
