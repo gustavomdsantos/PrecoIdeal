@@ -15,8 +15,11 @@ public class PrecoIdealController {
      */
     public static double calculaElasticidade(double pa, double pf, double qa, double qf) {
 
-        double elasticidade = (((qa-qf)/qf)/(pa-pf)/pf);
-        return Math.abs(elasticidade*100);
+        double vp = ((pa-pf)/pf);
+        double vq = ((qa-qf)/qf);
+        
+        double elasticidade = vq/vp;
+        return elasticidade;
     }
 
     /**
@@ -25,13 +28,17 @@ public class PrecoIdealController {
      * 
      * @param elasticidade elasticidade do preço na procura
      * @param pa Preço anterior (preço praticado) (Pa)
+     * @param pf Preço final (preço proposto) (Pf)
      * @param qa Quantidade atual (normalmente vende....) (Qa)
      * @return a relação entre o preço final e a quantidade final.
      */
-    public static double calculaRazaoIdeal(double elasticidade, double pa, double qa){
+    public static double calculaQtdeIdealMensal(double elasticidade, double pa, double pf, double qa){
 
-        double razao = (qa * (elasticidade + 1)) / pa;
-        return(razao);
+        double vp = ((pa-pf)/pf);           
+        double qf = qa/(elasticidade*vp + 1);
+        
+        
+        return(qf);
     }
 
     public static double calculaVariacaoPreco(double pa, double pf){

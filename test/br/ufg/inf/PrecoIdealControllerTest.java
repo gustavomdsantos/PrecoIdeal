@@ -17,7 +17,7 @@ public class PrecoIdealControllerTest {
         double qa = 4;
         double qf = 3;
         double result = PrecoIdealController.calculaElasticidade(pa, pf, qa, qf);
-        double expResult = 1.6;
+        double expResult = -1.6666666666;
         assertEquals(expResult, result, 0.1);
     }
 
@@ -38,16 +38,15 @@ public class PrecoIdealControllerTest {
     }
 
     @Test
-    public void testCalculaRazaoIdeal() {
-        double elasticidade = 1.6;
+    public void testCalculaQtdeIdealMensal() {
         double pa = 8;
-        double qa = 4;
-
-        double result = PrecoIdealController.calculaRazaoIdeal(elasticidade, pa, qa);
-
         double pf = 10;
+        double qa = 4;
         double qf = 3;
-        double expResult = (pf/qf);
-        assertEquals(expResult, result, 0.1);
+        
+        double elasticidade = PrecoIdealController.calculaElasticidade(pa, pf, qa, qf);
+        
+        double result = PrecoIdealController.calculaQtdeIdealMensal(elasticidade, pa , pf, qa);
+        assertEquals(qf, result, 0.1);
     }
 }
