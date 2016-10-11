@@ -36,4 +36,18 @@ public class PrecoIdealControllerTest {
         double expResult = -40;
         assertEquals(expResult, result, 0.1);
     }
+
+    @Test
+    public void testCalculaRazaoIdeal() {
+        double elasticidade = 1.6;
+        double pa = 8;
+        double qa = 4;
+
+        double result = PrecoIdealController.calculaRazaoIdeal(elasticidade, pa, qa);
+
+        double pf = 10;
+        double qf = 3;
+        double expResult = (pf/qf);
+        assertEquals(expResult, result, 0.1);
+    }
 }
