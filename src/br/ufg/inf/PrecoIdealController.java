@@ -18,4 +18,10 @@ public class PrecoIdealController {
         double elasticidade = (((qa-qf)/qf)/(pa-pf)/pf);
         return Math.abs(elasticidade*100);
     }
+
+    public static double calculaVariacaoPreco(double pa, double pf){
+
+        double variacao = ((pf-pa)/pa);
+        return (variacao*100);
+    }
 }
