@@ -25,6 +25,6 @@ public class PrecoIdeal {
 
         double elasticidade = PrecoIdealController.calculaElasticidade(pa, pf, (double) qa, (double) qp);
 
-        System.out.println("\nElasticidade do produto: " + elasticidade);
+        System.out.println("\nElasticidade do produto: " + elasticidade + "%");
     }
 }
